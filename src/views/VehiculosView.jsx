@@ -8,6 +8,7 @@ import { collection, setDoc, doc, query, onSnapshot } from "firebase/firestore";
 import Grid from "@mui/material/Grid";
 import Autocomplete from '@mui/material/Autocomplete';
 import Swal from 'sweetalert2';
+import Typography from '@mui/material/Typography';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import DescriptionIcon from '@mui/icons-material/Description';
 import Stack from '@mui/material/Stack';
@@ -118,15 +119,20 @@ export default function VehiculosView() {
 
         <Container style={{ paddingTop: 10 }}>
             <Grid container spacing={{ xs: 2 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-                <Grid item xs={12} md={12}>
+            <Grid item xs={12} md={12}>
+            <Typography component="div" variant="h1" className="titulo" >
+               REGISTRO AUTOMÓVILES
+                      </Typography>
+                </Grid>
+                <Grid item xs={12} md={4}>
 
                     <Button
+                    fullWidth
                         variant="contained"
-
-                        sx={{ height: "100%" }}
+                        sx={{ marginLeft: 50, height: "100%" }} 
                         endIcon={<DirectionsCarIcon sx={{ fontSize: 100 }} />}
                         onClick={() => mostrarModalInsertar()}
-                    >Ingresar Vehiculo</Button>
+                    >Ingresar Vehículo</Button>
 
 
                 </Grid>
@@ -224,7 +230,7 @@ export default function VehiculosView() {
 
                 <Modal className="{width:0px}" isOpen={modalInsertar}>
                     <ModalHeader>
-                        <div><h3>Ingresar Nuevo Vehiculo</h3></div>
+                        <div><h3>Ingresar Nuevo Vehículo</h3></div>
                     </ModalHeader>
                     <ModalBody>
                         <Grid container spacing={2}>
@@ -261,18 +267,16 @@ export default function VehiculosView() {
 
                         </Grid>
                     </ModalBody>
-                    <ModalFooter>
-                        <Stack direction="row" spacing={1}>
+                    <ModalFooter className="modal-footer1">
+                    <Stack direction="row" spacing={2} alignitems="center" justifyContent="center" >
                             <Button
                                 variant="outlined"
-
                                 onClick={() => IngresarEquipo()}
                             >
                                 Insertar
                             </Button>
                             <Button
                                 variant="contained"
-
                                 onClick={() => cerrarModalInsertar()}
                             >
                                 Cancelar

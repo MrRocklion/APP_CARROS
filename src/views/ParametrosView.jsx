@@ -2,7 +2,9 @@ import React, { useState,useEffect } from "react";
 import { Grid } from "@mui/material";
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
+import Typography from '@mui/material/Typography';
 import TableBody from '@mui/material/TableBody';
 import TableCell, { tableCellClasses}  from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
@@ -142,8 +144,14 @@ export default function ParametrosView() {
         <>
             <Container maxWidth="lg" style={{ paddingTop: 20 }}>
                 <Grid container spacing={2}>
-                    <Grid item md={4} xs={12} >
-                        <Button fullWidth variant="contained" sx={{ height: "100%" }} onClick={abrirModalCrearParametro}>Crear Parametro</Button>
+
+                   <Grid item xs={12} md={12}>
+            <Typography component="div" variant="h1" className="parametros" >
+               PARÁMETROS MANTENIMIENTO
+                      </Typography>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                        <Button fullWidth variant="contained" sx={{ marginLeft: 50 }}  onClick={abrirModalCrearParametro}>Crear Parametro</Button>
                     </Grid>
          
                 
@@ -179,7 +187,7 @@ export default function ParametrosView() {
                                                 align={"left"}
                                                 style={{ minWidth: 100 }}
                                             >
-                                                Configuracion
+                                                Configuración
                                             </TableCell>
 
 
@@ -233,7 +241,7 @@ export default function ParametrosView() {
                     <ModalHeader>
                         <div>
                             <h6>
-                                Creacion de Parametros
+                                Crear Parámetros
                             </h6>
                         </div>
                     </ModalHeader>
@@ -310,13 +318,16 @@ export default function ParametrosView() {
 
 
                     </ModalBody>
-                    <ModalFooter >
-                        <Button variant="contained" color='anaranjado1' onClick={crearParametro} sx={{ marginLeft: 1 }}>
+                    <ModalFooter className="modal-footer1" >
+                    <Stack direction="row" spacing={1} alignitems="center" justifyContent="center" >
+                    <Button variant="contained" onClick={crearParametro} sx={{ marginLeft: 1 }}>
                             Aplicar
                         </Button>
-                        <Button variant="contained" color='rojo' onClick={() => { setModalParametro(false) }} sx={{ marginLeft: 1 }}>
-                            cancelar
+                        <Button variant="contained" onClick={() => { setModalParametro(false) }} sx={{ marginLeft: 1 }}>
+                            Cancelar
                         </Button>
+                    </Stack>
+                       
                     </ModalFooter>
                 </Modal>
 
@@ -324,7 +335,7 @@ export default function ParametrosView() {
                     <ModalHeader>
                         <div>
                             <h1>
-                                Creacion de Parametros
+                                Crear de Parametros
                             </h1>
                         </div>
                     </ModalHeader>
@@ -352,12 +363,15 @@ export default function ParametrosView() {
                         </Grid>
                     </ModalBody>
                     <ModalFooter >
-                        <Button variant="contained" color='anaranjado1' sx={{ marginLeft: 1 }}>
+                    <Stack direction="row" spacing={2} alignitems="center" justifyContent="center" >
+                    <Button variant="outlined" sx={{ marginLeft: 1 }}>
                             Aplicar
                         </Button>
-                        <Button variant="contained" color='rojo' onClick={() => { setModalConfiguracion(false) }} sx={{ marginLeft: 1 }}>
-                            cancelar
+                        <Button variant="contained" onClick={() => { setModalConfiguracion(false) }} sx={{ marginLeft: 1 }}>
+                            Cancelar
                         </Button>
+                    </Stack>
+                       
                     </ModalFooter>
                 </Modal>
             </Container>

@@ -176,13 +176,13 @@ const abrirModalMantenimiento =()=>{
   const guardarMantenimientosRealizados= ()=>{
 
     Swal.fire({
-      title: 'Estas Seguro?',
-      text: "Este Plan se registrará en la base de datos!",
+      title: '¿Desea guardar el Plan de Mantenimiento?',
+      text: "Este plan se registrará en la base de datos!",
       icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Si,guardar'
+      confirmButtonText: 'Sí,guardar'
     }).then(async(result) => {
       if (result.isConfirmed) {
         let vehiculo_updated = JSON.parse(JSON.stringify(vehiculo))
@@ -436,7 +436,7 @@ const abrirModalMantenimiento =()=>{
                         </Grid>
                     </ModalBody>
                     <ModalFooter>
-                        <Stack direction="row" spacing={1}>
+                    <Stack direction="row" spacing={2} alignitems="center" justifyContent="center" >
                             <Button
                                 variant="outlined"
                                 onClick={() => Calcular()}
@@ -447,7 +447,7 @@ const abrirModalMantenimiento =()=>{
                                 variant="contained"
                                 onClick={() => setModalMantenimientos(false)}
                             >
-                              cancelar
+                              Cancelar
                             </Button>
                         </Stack>
                     </ModalFooter>

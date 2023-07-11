@@ -63,7 +63,7 @@ export default  function AppBarCarros(){
           aria-labelledby="nested-list-subheader"
           subheader={
             <ListSubheader component="div" id="nested-list-subheader">
-              Navegacion
+              Software Mantenimiento
           </ListSubheader>
           }
         >
@@ -71,14 +71,14 @@ export default  function AppBarCarros(){
                         <ListItemIcon>
                             <SettingsIcon fontSize='large' />
                         </ListItemIcon>
-                        <ListItemText primary="Parametros"/>
+                        <ListItemText primary="Parámetros"/>
             </ListItemButton>
 
             <ListItemButton onClick={()=>{navigate('/vehiculos')}} >
                         <ListItemIcon>
                             <DriveEtaIcon fontSize='large' />
                         </ListItemIcon>
-                        <ListItemText primary="Vehiculos"/>
+                        <ListItemText primary="Vehículos"/>
             </ListItemButton>
             </List>
             

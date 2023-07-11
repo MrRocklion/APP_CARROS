@@ -4,6 +4,7 @@ import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
+import Stack from '@mui/material/Stack';
 import TableCell, { tableCellClasses } from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
@@ -225,7 +226,7 @@ export default function ConfigParametroView() {
                                                 align={"left"}
                                                 style={{ minWidth: 100 }}
                                             >
-                                                Configuracion
+                                                Configuración
                                             </TableCell>
 
 
@@ -389,13 +390,16 @@ export default function ConfigParametroView() {
 
 
                     </ModalBody>
-                    <ModalFooter >
-                        <Button variant="contained" color='anaranjado1' onClick={aplicarCambios} sx={{ marginLeft: 1 }}>
+                    <ModalFooter className="modal-footer1" >
+                    <Stack direction="row" spacing={2} alignitems="center" justifyContent="center" >
+                    <Button variant="contained" color='anaranjado1' onClick={aplicarCambios} sx={{ marginLeft: 1 }}>
                             Aplicar
                         </Button>
                         <Button variant="contained" color='rojo' onClick={() => { setModalActividad(false) }} sx={{ marginLeft: 1 }}>
-                            cancelar
+                            Cancelar
                         </Button>
+                    </Stack>
+                     
                     </ModalFooter>
                 </Modal>
 
@@ -459,12 +463,16 @@ export default function ConfigParametroView() {
 
                     </ModalBody>
                     <ModalFooter >
-                        <Button variant="contained" color='anaranjado1' onClick={editarActividad} sx={{ marginLeft: 1 }}>
+                        
+                    <Stack direction="row" spacing={2} alignitems="center" justifyContent="center" >
+                    <Button variant="contained" color='anaranjado1' onClick={editarActividad} sx={{ marginLeft: 1 }}>
                             Aplicar
                         </Button>
                         <Button variant="contained" color='rojo' onClick={() => { setModalEditar(false) }} sx={{ marginLeft: 1 }}>
-                            cancelar
+                            Cancelar
                         </Button>
+                    </Stack>
+                        
                     </ModalFooter>
                 </Modal>
         </>
